@@ -1,13 +1,10 @@
 name: Auto commit
 
 on:
-  push:
-    branches:
-      - master
-
   schedule:
     - cron: "0 * * * *"
-
+  push: { branches: ["master", "main"] }
+  workflow_dispatch:
 jobs:
   auto_commit:
     runs-on: ubuntu-latest
